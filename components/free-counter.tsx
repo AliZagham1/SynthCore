@@ -11,7 +11,7 @@ import { useProModal } from "@/hooks/use-pro-modal";
 export const FreeCounter = ({
  
 } ) => {
-  const { freeCounter, refreshFreeCounter } = useFreeCounter();
+  const { freeCounter } = useFreeCounter();
   const proModal = useProModal();
 
   

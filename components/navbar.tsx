@@ -1,8 +1,5 @@
 "use client";
 
-import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
-
 import { UserButton } from "@clerk/nextjs";
 import MobileSidebar from "./mobile-sidebar";
 const DotIcon = () => {

@@ -8,7 +8,7 @@ import { FreeCounter } from "./free-counter";
 import { useFreeCounter } from "@/app/context/FreeCounterContext";
 
 import {cn} from "@/lib/utils";
-import DashboardLayout from "@/app/(dashboard)/layout";
+
 
 const montserrat = Montserrat({ weight: "600", subsets: ["latin"] });
 

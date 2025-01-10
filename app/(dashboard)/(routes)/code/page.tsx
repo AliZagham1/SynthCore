@@ -9,7 +9,7 @@ import { Code } from "lucide-react";
 import {useForm} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema } from "./constants";
-import { Form, FormField, FormItem, FormControl, FormMessage } from "@/components/ui/form";
+import { Form, FormField, FormItem, FormControl } from "@/components/ui/form";
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button";
 import { UserAvatar } from "@/components/user-avatar";
@@ -127,11 +127,11 @@ const CodePage = () => {
                             
                                 {message.role === "user" ? <UserAvatar/> : <BotAvatar/>}
                                 <ReactMarkdown components= {{
-                                        pre: ({node, ...props}) => (
+                                        pre: ({ ...props}) => (
                                             <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
                                                 <pre {...props}/>
                                             </div>
-                                        ), code: ({node, ...props}) => (
+                                        ), code: ({...props}) => (
                                             <code className="bg-black/10 rounded-lg p-1" {...props}/>
                                         )
 

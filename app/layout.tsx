@@ -6,12 +6,9 @@ import { CrispProvider } from "@/components/crisp-provider";
 import "./globals.css";
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+  
 } from "@clerk/nextjs";
-import { ProModal } from "@/components/pro-modal";
+
 import { SubscriptionProvider } from "@/app/context/SubscriptionContext";
 import { ToasterProvider } from "@/components/toaster-provider";
 

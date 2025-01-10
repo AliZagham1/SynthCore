@@ -12,7 +12,7 @@ import { Form, FormField, FormItem, FormControl, FormMessage } from "@/component
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import {cn } from "@/lib/utils";    
+   
 import axios from "axios";
 import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem } from "@/components/ui/select";
 import { Card, CardFooter } from "@/components/ui/card";
@@ -20,11 +20,7 @@ import Image from "next/image";
 import { Download, ImageIcon } from "lucide-react";
 import { useProModal } from "@/hooks/use-pro-modal";
 
-// This represents the structure of a message you send to OpenAI
-interface ChatMessage {
-    role: 'system' | 'user' | 'assistant'; // Defines the sender's role
-    content: string; // The text of the message
-  }
+
   
 
 const ImagePage = () => {

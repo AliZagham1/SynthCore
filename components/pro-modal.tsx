@@ -3,8 +3,8 @@
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
-import { Dialog, DialogDescription, DialogHeader, DialogContent, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { ArrowRight, Code, ImageIcon, MessageSquare, MusicIcon, VideoIcon } from "lucide-react";
+import { Dialog, DialogHeader, DialogContent, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import {  Code, ImageIcon, MessageSquare, MusicIcon, VideoIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 import { useProModal } from "@/hooks/use-pro-modal";
@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { Button } from "./ui/button";
 import { Zap } from "lucide-react";
-import { set } from "zod";
+;
 
 export const ProModal = () => {
   const ProModal = useProModal();
