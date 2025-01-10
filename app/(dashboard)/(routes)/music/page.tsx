@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { Empty } from "@/components/empty";
+import { AxiosError } from "axios";
 import { Loader } from "@/components/loader";
 import * as z from "zod";
 import { Heading } from "@/components/heading";
@@ -39,13 +40,18 @@ const MusicPage = () => {
         console.error("Audio not found in response:", response.data);
       }
       form.reset();
-    } catch (error:any) {
-      if (error?.response?.status === 403) {
-        proModal.onOpen();
-      }else {
-        toast.error(" Oops!Something went wrong");
-   }
-    } finally {
+    } catch (error: AxiosError | unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error("AXIOS_ERROR:", error as AxiosError); // Explicit reference to AxiosError
+        if (error.response?.status === 403) {
+          proModal.onOpen();
+        } else {
+          toast.error("Oops! Something went wrong");
+        }
+      } else {
+        toast.error("An unexpected error occurred");
+      }
+    }finally {
       router.refresh();
     }
   };

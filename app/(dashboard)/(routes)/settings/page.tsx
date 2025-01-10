@@ -6,7 +6,7 @@ import { useSubscription } from "@/app/context/SubscriptionContext"; // Import t
 import {SubscriptionButton } from "@/components/subscription-button";
 
 const SettingsPage = () => {
-  const { isPro, refreshSubscription } = useSubscription(); // Access subscription context
+  const { isPro } = useSubscription(); // Access subscription context
 
   return (
     <div>

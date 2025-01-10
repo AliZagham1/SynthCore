@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import prismadb from "@/lib/prismadb";
 import { stripe } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
+import {Stripe} from "stripe";
 
 const settingsUrl = absoluteUrl("/settings");
 
@@ -67,8 +68,18 @@ export async function GET() {
 
         // Redirect new user to Stripe checkout page
         return NextResponse.json({ url: stripeSession.url });
-    } catch (error: any) {
-        console.error("[STRIPE_GET_ERROR]", error);
+    } catch (error: unknown) {
+        if (error instanceof Stripe.errors.StripeError) {
+          // Specific handling for Stripe errors
+          console.error("[STRIPE_GET_ERROR]", error.message);
+        } else if (error instanceof Error) {
+          // General error handling
+          console.error("[GENERAL_ERROR]", error.message);
+        } else {
+          // Handle unknown error types
+          console.error("[UNKNOWN_ERROR]", error);
+        }
+      
         return new NextResponse("Internal error", { status: 500 });
-    }
+      }
 }

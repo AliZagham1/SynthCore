@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { AxiosError } from "axios";
 import { toast } from "react-hot-toast";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -57,13 +58,17 @@ const VideoPage = () => {
       } else {
         console.error("No files were generated.");
       }
-    } catch (error:any) {
-      if (error?.response?.status === 403) {
-        proModal.onOpen();
-      }else {
-        toast.error(" Oops!Something went wrong");
-   }
-     
+    } catch (error: AxiosError | unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error("AXIOS_ERROR:", error as AxiosError);
+        if (error.response?.status === 403) {
+          proModal.onOpen();
+        } else {
+          toast.error("Oops! Something went wrong");
+        }
+      } else {
+        toast.error("An unexpected error occurred");
+      }
     } finally {
       setIsLoading(false); // Reset loading state
     }

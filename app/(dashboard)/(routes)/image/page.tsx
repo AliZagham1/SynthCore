@@ -2,13 +2,14 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Empty } from "@/components/empty";
+import { AxiosError } from "axios";
 import { Loader } from "@/components/loader";
 import * as z from "zod";
 import { Heading } from "@/components/heading";
 import {useForm} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { amountOptions, formSchema, resolutionOptions } from "./constants";
-import { Form, FormField, FormItem, FormControl, FormMessage } from "@/components/ui/form";
+import { Form, FormField, FormItem, FormControl} from "@/components/ui/form";
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -66,14 +67,18 @@ const ImagePage = () => {
             form.reset();
 
            
-        } catch (error:any) {
-            if (error?.response?.status === 403){
+        } catch (error: AxiosError | unknown) {
+            if (axios.isAxiosError(error)) {
+                console.error("AXIOS_ERROR:", error as AxiosError);
+              if (error.response?.status === 403) {
                 proModal.onOpen();
-            }else {
-                toast.error(" Oops!Something went wrong");
-           }
-            
-        } finally {
+              } else {
+                toast.error("Oops! Something went wrong");
+              }
+            } else {
+              toast.error("An unexpected error occurred");
+            }
+          }finally {
             router.refresh();
         }
     }

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Empty } from "@/components/empty";
+import { AxiosError } from "axios";
 import { Loader } from "@/components/loader";
 import * as z from "zod";
 import { Heading } from "@/components/heading";
@@ -68,15 +69,22 @@ const ConversationPage = () => {
             refreshFreeCounter();
 
             form.reset();
-        } catch (error: any) {
-            if(error?.response?.status === 403){
+        } catch (error: AxiosError | unknown) {
+            if (axios.isAxiosError(error)) {
+              console.error("AXIOS_ERROR:", error as AxiosError);
+              if (error.response?.status === 403) {
+                const serverMessage = error.response?.data?.message || "You have exceeded the limit.";
+                toast.error(serverMessage); // Display the server message
                 proModal.onOpen();
-            }else {
-                 toast.error(" Oops!Something went wrong");
+              } else {
+                toast.error("Oops! Something went wrong");
+              }
+            } else {
+              toast.error("An unexpected error occurred");
             }
-        } finally {
+          } finally {
             router.refresh();
-        }
+          }
     }
     return (
         <div>

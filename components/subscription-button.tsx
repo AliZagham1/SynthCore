@@ -19,9 +19,13 @@ export const SubscriptionButton= ({
             setLoading(true);
             const reposnse = await axios.get("/api/stripe");
             window.location.href = reposnse.data.url
-        } catch (error){
-            console.log("STRIPE_CLIENT_ERROR");
-        } finally {
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+              console.error("STRIPE_CLIENT_ERROR:", error.message);
+            } else {
+              console.error("STRIPE_CLIENT_ERROR: Unknown error occurred");
+            }
+          } finally {
             setLoading(false);
         }
     }

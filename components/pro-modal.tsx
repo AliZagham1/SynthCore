@@ -2,6 +2,7 @@
 "use client";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { AxiosError } from "axios";
 import { useState } from "react";
 import { Dialog, DialogHeader, DialogContent, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import {  Code, ImageIcon, MessageSquare, MusicIcon, VideoIcon } from "lucide-react";
@@ -24,10 +25,19 @@ export const ProModal = () => {
       setLoading(true);
       const response = await axios.get("/api/stripe");
       window.location.href = response.data.url;
-    } catch (error){
-      toast.error("Oops! Something went wrong");
-
-    } finally {
+    } catch (error: AxiosError | unknown) {
+      if (axios.isAxiosError(error)) {
+        const axiosError = error as AxiosError; // Explicitly reference AxiosError
+        console.error("AXIOS_ERROR:", axiosError.message);
+        if (axiosError.response?.status === 403) {
+          ProModal.onOpen();
+        } else {
+          toast.error("Oops! Something went wrong");
+        }
+      } else {
+        toast.error("An unexpected error occurred");
+      }
+    }finally {
       setLoading(false);
     }
   }
