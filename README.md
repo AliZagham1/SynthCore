@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+*SynthCore*
+SynthCore is an AI-driven platform built with TypeScript, designed to simplify the creative and development process for users. By providing tools to generate text, music, images, videos, and code, it eliminates repetitive tasks and reduces the time spent on manual work. SynthCore solves the challenge of accessing reliable, high-quality AI tools in one place, offering a streamlined experience for creators, developers, and businesses. With integrated customer support, it ensures users can focus on their ideas while the platform handles the complexity.
 
-## Getting Started
+*Features*
+🎨 *Image Generation*
+Generate stunning visuals from descriptive prompts.
+![Image Generation](./public/images/image-generation.png)
 
-First, run the development server:
+🎵 *Music Generation*
+Compose custom soundtracks and melodies powered by AI.
+![Music Generation](./public/images/music-generation.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🎥 *Video Generation*
+Transform your ideas into engaging video content.
+![Video Generation](./public/images/video-generation.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+💻 *Code Generation*
+Generate accurate and optimized code snippets.
+![Code Generation](./public/images/code-generation.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+💬 *AI Conversations*
+Engage in intelligent and context-aware conversations.
+![AI Conversation](./public/images/ai-conversation.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💳 *Secure Payments with Stripe*
+Handle subscriptions and payments securely using Stripe.
+Upgrade to the Pro Plan for unlimited access.
+![Stripe Payment](./public/images/code-payment.png)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+🤝 *Customer Support*
+24/7 Support: Get assistance whenever needed.
+Dedicated Team: Resolve issues quickly to enhance your experience.
+![Customer Support](./public/images/customer-support.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*Clerk Authentication*
+User Verification for secure login
+Option to create account through email
+![Secure Login/Signup](./public/images/clerk.png)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Technology Stack*
+TypeScript: Type-safe and reliable.
+Next.js: Framework for building server-side and static web applications.
+Tailwind CSS: Modern and responsive UI design.
+Prisma: Database ORM for PostgreSQL.
+OpenAI API: The brain behind the AI functionalities.
+Clerk: Authentication and user management.
+Stripe: Secure payment and subscription management.
+Core Values
+Efficiency: Fast and responsive AI tools.
+Scalability: Designed to handle high user traffic.
+Customizability: Tailored outputs to meet user needs.
+Customer Support: Ensuring seamless and reliable user experiences.
+
+
+
+*Core Values*
+Efficiency: Fast and responsive AI tools.
+Scalability: Designed to handle high user traffic.
+Customizability: Tailored outputs to meet user needs.
+Customer Support: Ensuring seamless and reliable user experiences.
+
+
+
+
+
+
+
+
+
+
