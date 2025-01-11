@@ -1,11 +1,12 @@
 *SynthCore*
+
 SynthCore is an AI-driven platform built with TypeScript, designed to simplify the creative and development process for users. By providing tools to generate text, music, images, videos, and code, it eliminates repetitive tasks and reduces the time spent on manual work. SynthCore solves the challenge of accessing reliable, high-quality AI tools in one place, offering a streamlined experience for creators, developers, and businesses. With integrated customer support, it ensures users can focus on their ideas while the platform handles the complexity.
 
 *Features*
+
 🎨 *Image Generation*
 Generate stunning visuals from descriptive prompts.
-![Image Generation](./public/images/image-generation.png)
-
+![Image Generation](/images/image-generation.png)
 🎵 *Music Generation*
 Compose custom soundtracks and melodies powered by AI.
 ![Music Generation](./public/images/music-generation.png)
