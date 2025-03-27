@@ -23,10 +23,10 @@ import { useProModal } from "@/hooks/use-pro-modal";
 import { toast } from "react-hot-toast";
 
 
-// This represents the structure of a message you send to OpenAI
+
 interface ChatMessage {
-    role: 'system' | 'user' | 'assistant'; // Defines the sender's role
-    content: string; // The text of the message
+    role: 'system' | 'user' | 'assistant';
+    content: string; 
   }
   
 
